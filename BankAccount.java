@@ -4,10 +4,10 @@ public class BankAccount {
   int accountID;
   String password;
 
-  public BankAccount(int newID, String newPassword) {
-    accountID = newID;
-    password = newPassword;
-    balance = 0;
+  public BankAccount(int accountID, String password) {
+    this.accountID = accountID;
+    this.password = password;
+    this.balance = 0;
   }
 
   public double getBalance() {
@@ -18,8 +18,16 @@ public class BankAccount {
     return accountID;
   }
 
-  public void setPassword(String newPassword) {
-    password = newPassword;
+  public void setPassword(String newPass) {
+    password = newPass;
+  }
+
+  public boolean deposit(double amount) {
+    if (amount >= 0) {
+      balance += amount;
+      return true;
+    }
+    return false;
   }
 
   public static void main(String[] args) {
@@ -28,5 +36,8 @@ public class BankAccount {
     System.out.println(myAccount.getAccountID());
     myAccount.setPassword("new pswd");
     System.out.println(myAccount.password);
+    System.out.println(myAccount.deposit(1000));
+    System.out.println(myAccount.deposit(-1000));
+    System.out.println(myAccount.getBalance());
   }
 }
