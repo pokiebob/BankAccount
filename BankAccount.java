@@ -10,9 +10,18 @@ public class BankAccount {
     balance = 0;
   }
 
+  double getBalance() {
+    return balance;
+  }
+
+  int getAccountID() {
+    return accountID;
+  }
+
   public static void main(String[] args) {
     BankAccount myAccount = new BankAccount();
-    myAccount.newAccount(221153448, "pswd");
-    System.out.println(myAccount.balance);
+    myAccount.newAccount(1208, "pswd");
+    System.out.println(myAccount.getBalance());
+    System.out.println(myAccount.getAccountID());
   }
 }
