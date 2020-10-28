@@ -4,27 +4,26 @@ public class BankAccount {
   int accountID;
   String password;
 
-  void newAccount(int newID, String newPassword) {
+  public BankAccount(int newID, String newPassword) {
     accountID = newID;
     password = newPassword;
     balance = 0;
   }
 
-  double getBalance() {
+  public double getBalance() {
     return balance;
   }
 
-  int getAccountID() {
+  public int getAccountID() {
     return accountID;
   }
 
-  void setPassword(String newPassword) {
+  public void setPassword(String newPassword) {
     password = newPassword;
   }
 
   public static void main(String[] args) {
-    BankAccount myAccount = new BankAccount();
-    myAccount.newAccount(1208, "pswd");
+    BankAccount myAccount = new BankAccount(1208, "pswd");
     System.out.println(myAccount.getBalance());
     System.out.println(myAccount.getAccountID());
     myAccount.setPassword("new pswd");
