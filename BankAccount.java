@@ -30,6 +30,18 @@ public class BankAccount {
     return false;
   }
 
+  public boolean withdraw(double amount) {
+    if (amount >= 0 && balance >= amount) {
+      balance -= amount;
+      return true;
+    }
+    return false;
+  }
+
+  public String toString() {
+    return String.format("%d\t%f", accountID, balance);
+  }
+
   public static void main(String[] args) {
     BankAccount myAccount = new BankAccount(1208, "pswd");
     System.out.println(myAccount.getBalance());
@@ -39,5 +51,10 @@ public class BankAccount {
     System.out.println(myAccount.deposit(1000));
     System.out.println(myAccount.deposit(-1000));
     System.out.println(myAccount.getBalance());
+    System.out.println(myAccount.withdraw(-999));
+    System.out.println(myAccount.withdraw(1001));
+    System.out.println(myAccount.withdraw(999));
+    System.out.println(myAccount.getBalance());
+    System.out.println(myAccount.toString());
   }
 }
